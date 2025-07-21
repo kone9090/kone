@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>จดหมายของคุณ</title>
+  <style>
+    body {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    .envelope {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .envelope:hover {
+      transform: scale(1.1);
+    }
+
+    .message {
+      max-width: 300px;
+      margin-top: 20px;
+      font-size: 1.2em;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://cdn-icons-png.flaticon.com/512/1029/1029183.png" alt="Envelope" class="envelope" id="envelope">
+  <div class="message" id="message">จดหมายมาส่งแล้วค้าบบ ❤️💌<br>คิดถึงคุณเสมอนะ!</div>
+
+  <script>
+    const envelope = document.getElementById('envelope');
+    const message = document.getElementById('message');
+
+    envelope.addEventListener('click', () => {
+      message.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
